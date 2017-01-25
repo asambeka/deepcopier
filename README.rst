@@ -1,11 +1,8 @@
 Deepcopier
 ==========
 
-.. image:: https://secure.travis-ci.org/ulule/deepcopier.png?branch=master
-    :alt: Build Status
-    :target: http://travis-ci.org/ulule/deepcopier
 
-This package is meant to make copying of structs to/from others structs a bit easier.
+This package is meant to make copying of structs to/from others structs a bit easier. This is a fork of ulule/deepcopier without null and postgress support.
 
 
 Installation
@@ -13,7 +10,7 @@ Installation
 
 ::
 
-    $ go get github.com/ulule/deepcopier
+    $ go get github.com/asambeka/deepcopier
 
 This package requires some dependencies:
 
@@ -88,16 +85,4 @@ Example:
         fmt.Println(resource.DisplayName)
     }
 
-Looking for more information about the usage?
 
-We wrote `an introduction article <https://github.com/ulule/deepcopier/blob/master/examples/rest-usage/README.rst>`_,
-have a look and give us your feedback.
-
-Contributing
-------------
-
-* Ping us on twitter `@oibafsellig <https://twitter.com/oibafsellig>`_, `@thoas <https://twitter.com/thoas>`_
-* Fork the `project <https://github.com/ulule/deepcopier>`_
-* Fix `bugs <https://github.com/ulule/deepcopier/issues>`_
-
-Don't hesitate ;)
