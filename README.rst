@@ -1,8 +1,7 @@
 Deepcopier
 ==========
-.. image:: https://secure.travis-ci.org/asambeka/deepcopier.png?branch=master
-    :alt: Build Status
-    :target: http://travis-ci.org/asambeka/deepcopier
+.. image:: https://travis-ci.org/asambeka/deepcopier.svg?branch=master
+    :target: https://travis-ci.org/asambeka/deepcopier
 
 This package is meant to make copying of structs to/from others structs a bit easier. This is a fork of ulule/deepcopier without null and postgress support.
 
