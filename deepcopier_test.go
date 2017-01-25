@@ -4,7 +4,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/guregu/null"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -156,7 +155,6 @@ type User struct {
 	AnUInt64     uint64
 	AStringSlice []string
 	AnIntSlice   []int
-	ANullString  null.String
 	APointer     string
 }
 
@@ -178,7 +176,6 @@ func NewUser(now time.Time, pointer *string) *User {
 		AnUInt64:     uint64(10),
 		AStringSlice: []string{"Chuck", "Norris"},
 		AnIntSlice:   []int{0, 8, 15},
-		ANullString:  null.StringFrom("I'm null"),
 		APointer:     *pointer,
 	}
 }
@@ -254,7 +251,6 @@ type UserCopy struct {
 	UInt16            uint16      `json:"an_uint16" deepcopier:"field:AnUInt16"`
 	UInt32            uint32      `json:"an_uint32" deepcopier:"field:AnUInt32"`
 	UInt64            uint64      `json:"an_uint64" deepcopier:"field:AnUInt64"`
-	NullString        null.String `json:"a_null_string" deepcopier:"field:ANullString"`
 	StringSlice       []string    `json:"a_string_slice" deepcopier:"field:AStringSlice"`
 	IntSlice          []int       `json:"an_int_slice" deepcopier:"field:AnIntSlice"`
 	IntMethod         int         `json:"int_method"`
@@ -294,7 +290,6 @@ func NewUserCopy(now time.Time, pointer *string) *UserCopy {
 		UInt64:            uint64(10),
 		StringSlice:       []string{"Chuck", "Norris"},
 		IntSlice:          []int{0, 8, 15},
-		NullString:        null.StringFrom("I'm null"),
 		IntMethod:         int(10),
 		Int8Method:        int8(10),
 		Int16Method:       int16(10),

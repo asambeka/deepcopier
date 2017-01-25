@@ -6,8 +6,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/guregu/null"
-	"github.com/lib/pq"
 	"github.com/oleiade/reflections"
 )
 
@@ -226,7 +224,7 @@ func (dc *DeepCopier) SetFieldValue(entity interface{}, name string, value refle
 	// Structs
 	if kind == reflect.Struct {
 		switch v := value.Interface().(type) {
-		case time.Time, pq.NullTime, null.String:
+		case time.Time:
 			if err := reflections.SetField(entity, name, v); err != nil {
 				return err
 			}
@@ -334,12 +332,6 @@ func (dc *DeepCopier) HandleStructField(options *FieldOptions) error {
 	}
 
 	switch v := f.(type) {
-	case pq.NullTime:
-		if v.Valid {
-			if err := reflections.SetField(dc.Destination, options.DestinationField, &v.Time); err != nil {
-				return err
-			}
-		}
 	case time.Time:
 		if err := reflections.SetField(dc.Destination, options.DestinationField, v); err != nil {
 			return err
