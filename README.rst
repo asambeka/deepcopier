@@ -53,7 +53,7 @@ Example:
 
     import (
         "fmt"
-        "github.com/ulule/deepcopier"
+        "github.com/asambeka/deepcopier"
     )
 
     // Model
